@@ -1,0 +1,24 @@
+<div>
+    <h2 class="text-center mt-2"><u>Active cases across India (Major States)</u></h2><br>
+    <div class="row mt-4">
+        <div class="col-sm-8">
+            <canvas id="myChart" width="900" height="300"></canvas>
+        </div>
+        <div class="col-sm-4">
+            <span style="background-color:  #01579B;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> active cases < 50000 <br>
+            <span style="background-color:orangered;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> active cases > 50000 
+        </div>
+    </div>
+</div>
+
+<div class="container text-center" style="margin-top: 50px;">
+    <div class="row">
+        <div class="col-sm-3 card shadow" *ngFor="let city of cities">
+            <div class="card-body">
+              <h5 class="card-title">{{city.state_name}}</h5>
+              <p class="card-text">{{city.active}} active cases</p>
+              <a routerLink="/details" [queryParams]="{state:city.state_name}" class="btn btn-primary">Get Details</a>
+            </div>
+        </div>
+    </div>
+</div>
